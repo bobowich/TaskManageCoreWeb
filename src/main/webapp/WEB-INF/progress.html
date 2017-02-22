@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function func(){
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            context.beginPath();
+            context.lineWidth = 5;
+            
+            context.strokeStyle = "blue";
+            context.globalAlpha = "0.8";
+            context.arc(100,100,50,Math.PI/2,-Math.PI/2,true);
+            context.stroke();
+            context.save();
+            context.globalAlpha = "0.4";
+            context.arc(100, 100, 50, -Math.PI / 2, Math.PI / 2,true);
+            context.stroke()
+            context.fillStyle = "black";
+            context.lineWidth = 5;
+            context.globalAlpha = "0.8";
+            context.font = "32px Arial";
+            //var a = context.measureText("50%");
+            //var textWidth = a.width;
+            //var textHeight = a.height;
+            //document.write("textWidth"+textWidth+"textHeight"+textHeight);
+            context.textAlign = "center";//水平居中
+            context.textBaseline = "middle";//垂直居中
+            context.fillText("50%", 100, 100);
+            context.restore();
+        }
+    </script>
+</head>
+<body onload="func()">
+    <div id="div1">
+        <canvas id="canvas" style="border: 1px dashed; line-height: 200px;" width="200" height="200">
+
+        </canvas>
+    </div>
+</body>
+</html>
